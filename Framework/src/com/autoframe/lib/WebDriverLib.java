@@ -1,8 +1,11 @@
 package com.autoframe.lib;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
@@ -29,10 +32,11 @@ public class WebDriverLib {
 	     * Constructor that takes in the instrumentation.
 	     *
 	     * @param instrumentation the {@link Instrumentation} instance
+		 * @throws IOException 
 	     *
 	     */
 	  
-	 public void newSetup(String p_Name)
+	 public void newSetup(String p_Name) throws IOException
 	   
 		
 	 	{
@@ -64,11 +68,14 @@ public class WebDriverLib {
 		     
             if (driver!=null)
             {	
-        		File file = new File("C:\\report\\");
+        		File file = new File("D:\\report\\");
         		if(!file.exists()) {
         			file.mkdir();
         		}
-            	re.crateLog("C:\\report\\"+p_Name+".html");
+        		String path = System.getProperty("user.dir");
+        		File source = new File(path + "\\css\\demo_report_style.css");
+        		FileUtils.copyFileToDirectory(source,file,true);
+            	re.crateLog("D:\\report\\"+p_Name+".html");
             	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
     			driver.get(baseUrl);
     			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
