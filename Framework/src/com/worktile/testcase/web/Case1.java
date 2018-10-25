@@ -1,7 +1,10 @@
 package com.worktile.testcase.web;
 
+import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.autoframe.lib.DataStore;
@@ -15,7 +18,7 @@ public class Case1 {
 
 	M1BussinessLib bl = new M1BussinessLib();
 
-	@BeforeClass
+	@Before
 	public void setUp() throws Exception {
 
 		bl.newSetup("测试登陆");
@@ -29,13 +32,13 @@ public class Case1 {
 		bl.login(DataStore.D_Username,DataStore.D_Password);
 		bl.newAssertEquals(myCase1,true,bl.newIsElementPresent(ObjectStore.CreateTask_Button));	
 	};
-	@Test
+	@Ignore
 	public void test2_addSchedule() throws Exception {
 		//添加日程
 		String myCase2="添加日程";
 	};
 	
-	@AfterClass
+	@After
 	public void tearDown() throws Exception {
 		
 		bl.newTeardown();

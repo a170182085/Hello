@@ -1,5 +1,6 @@
 package com.autoframe.lib;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 import org.openqa.selenium.By;
@@ -38,7 +39,7 @@ public class WebDriverLib {
 
 	  
 		 if (browser.equalsIgnoreCase("chrome")) {
-				// System.setProperty("webdriver.chrome.driver","D:\\MyWorkplace\\webdriverServer\\chromedriver.exe");
+				System.setProperty("webdriver.chrome.driver","C:\\Users\\zhanglei\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe");
 				
 				 driver = new ChromeDriver();
 
@@ -62,8 +63,12 @@ public class WebDriverLib {
 			}
 		     
             if (driver!=null)
-            {
-            	re.crateLog("d:\\report\\"+p_Name+".html");
+            {	
+        		File file = new File("C:\\report\\");
+        		if(!file.exists()) {
+        			file.mkdir();
+        		}
+            	re.crateLog("C:\\report\\"+p_Name+".html");
             	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
     			driver.get(baseUrl);
     			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);

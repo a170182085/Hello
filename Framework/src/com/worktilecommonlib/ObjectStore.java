@@ -30,5 +30,20 @@ public class ObjectStore {
 	public static final String Schedule_remind="";
 	public static final String Schedule_remindok = "";
 	public static final String Schedule_save = "";
+	//主菜单账户
+	public static final String Index_user = "css=span.avatar-text";
+	//退出
+	public static final String User_exit = "link=退出登录";
+	//账户设置
+	public static final String User_accountset = "link=账号资料设置";
+	//编辑个人资料
+	public static final String Account_userinfo = "xpath=//div[@class='ng-scope']/button[contains(text(),'编辑个人资料')]";
+	//个人资料相关
+	public static final String User_name = "name=display_name";//姓名
+	public static final String User_title = "name=user_title";//职位
+	public static final String User_department = "name=user_department";//部门
+	public static final String User_autograph = "xpath=//textarea[@placeholder='个性签名']";
+	public static final String User_save = "xpath=//button[@class='btn btn-success mr-14 mt_13 ng-binding']";
 	
+
 }

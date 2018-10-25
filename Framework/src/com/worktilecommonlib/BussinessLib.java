@@ -54,16 +54,27 @@ public class BussinessLib extends WebdriverLibExtension{
 				super.newType(ObjectStore.Login_LoginTab_Password,
 						p_password);
 				super.newClick(ObjectStore.Login_LoginTab_LoginButton);
-					
+				//判断是否有广告出现
+				if (newIsElementPresent(ObjectStore.Login_LoginTab_AD)) //xpath元素是广告右上角的*
+					super.newClick(ObjectStore.Login_LoginTab_AD);
 		}
 	
 	// 退出，不需要参数
 	public void logout() {
-
-	
-
+		super.newClick(ObjectStore.Index_user);
+		super.newClick(ObjectStore.User_exit);
 	}
-	
+	//设置账户个人资料
+	public void setUserInfo() {
+		super.newClick(ObjectStore.Index_user);
+		super.newClick(ObjectStore.User_accountset);
+		super.newClick(ObjectStore.Account_userinfo);
+		super.newType(ObjectStore.User_name, DataStore.D_User_name);
+		super.newType(ObjectStore.User_title, DataStore.D_User_title);
+		super.newType(ObjectStore.User_department, DataStore.D_User_department);
+		super.newType(ObjectStore.User_autograph, DataStore.D_User_autograph);
+		super.newClick(ObjectStore.User_save);
+	}
 	public void createTask(String p_taskname,String p_assignto){
 		super.newClick("");
 		super.newType("", "");

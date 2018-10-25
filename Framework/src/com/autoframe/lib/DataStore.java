@@ -18,8 +18,8 @@ public class DataStore {
 	public static int D_Schedule_endDay=Integer.parseInt(CommonLib.readINIFile("./config.ini", "Schedule", "endDay"));//结束时间
 	public static String D_Schedule_repeat=CommonLib.readINIFile("./config.ini", "Schedule", "repeat");//重复选项
 	public static String D_Schedule_remind=CommonLib.readINIFile("./config.ini", "Schedule", "remind");//提醒
-	
-
-
-
+	public static String D_User_name=CommonLib.readINIFile("./config.ini", "userInfo", "name");//展示名
+	public static String D_User_title=CommonLib.readINIFile("./config.ini", "userInfo", "title");
+	public static String D_User_department=CommonLib.readINIFile("./config.ini", "userInfo", "department");
+	public static String D_User_autograph=CommonLib.readINIFile("./config.ini", "userInfo", "autograph");
 }
