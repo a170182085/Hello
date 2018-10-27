@@ -1,0 +1,151 @@
+推荐一个工具
+2017年4月9日 - Randoop是一个随机测试的测试用例生成的工具,能够自动的为Java代码中的类生成单元测试。
+
+
+注意
+assert 和verify是一个通用的概念，
+assert 是失败后终止
+verify 是失败后继续
+
+junit中，如果case之间没有关联，执行时就是verify
+
+如果case之间有关联 我们可以通过标签，让case顺序执行，但是有问题！！！！
+
+有两种解决方法，如果只用junit4的断言，就需要把相关的测试点 写在一个case中
+然后 ，每一个测试点后面，都加assert
+
+case{
+p1
+assert
+
+p2
+assert
+
+p3
+assert
+
+
+}
+
+debug日志相当于是 每一个api的执行情况都有输出说明！
+
+而report 中的写入是通过 自定义assert或者verify 方法，只是在需要校验，测试点是否通过时，写入测试报告
+
+
+newAssert(Object[] p_expect, Object[] p_actual)一个多点的校验比较
+
+
+把以前判断文字是否是纯在的，移入到架构中
+
+
+如何把脚本移植到架构中
+
+前提条件，架构的核心组织，直接复制过来就OK，然后变更case中的内容
+
+1.录制 然后导出脚本
+2.把录制的ui元素写入到objectstore中
+3.根据1.2的步骤选择架构中对应的api 和Objectstore元素，进行填写
+4.根据你的需求，即业务的使用频度，决定是否把该业务放到Bussinesslib中
+
+注意一点，并不是把所有的业务都放到Bussinesslib中的！！！！！！
+
+
+如果熟练了之后怎么玩
+
+先设计Objectstore的变量  
+例如 Login_Button=""
+
+然后直接引入架构的方法构建用例了
+
+bl.newClick(ObjectStore.Login_Button);
+bl.newClick(ObjectStore.Login_Button2);
+bl.assert()
+
+
+用例设计完毕后，我在用ide录制脚本，把录制的ui元素复制到对应的变量中
+
+用架构的时候，不要使用homework folder下的代码，只是一个展示
+
+用课程中演示的代码，架构代码功能相对完善
+
+
+两个系统间talk的接口，本质上就是方法的调用
+
+
+设计截屏到测试报告中的一个思路
+
+1.日志系统的formatter，根据测试结果的pass和fail，生成不同的html代码
+2.在我么的Webdriverlib里面的assert或者verify方法里添加 截屏方法（核心是webdriver的截屏方法）
+3.把截屏的图片拷贝到指定位置，位置信息通过变量保存起来
+4.把步骤3中的变量，通过日志模块提供的接口 传递给日志模块
+5.日志模块实现具体的功能————   很简单，把截屏路径的变量赋值给 日志模块中的RecordStore
+6.步骤1 引用RecordStore中截屏的路径
+
+
+
+DEBUG log的实现思路
+
+1.考虑java loger的 new FileHandler (true) 追加写，使用SimpleFormatter ,
+2.设定一个全局的static logger
+3.file logger的创建 在setup中，同时html report的创建也在setup中实现
+3.在每一个api中需要正确输出的地方都用logger info,错误或者异常的地方都使用logger.error
+4最后logger的关闭都在 newTeardown里
+
+即使到家将来自定义的日志，html有变化，也没关系，大家主要了解的是，如何使用logger把信息输出到html日志中！！！！！！！
+另外今天讲解的重点是，如果增加日志的接口，服务于你自动化架构中对日志模块的调用！！！！！！
+
+设计邮件模块
+
+1.找到相关的api来发送邮件，思路：在网上找，java有哪些jar包能够发送邮件
+2.找到后，测试发送邮件的api是否发送邮件成功。
+3.先验证邮件发送是成功的，然后再考虑把该功能集成到我们的架构中
+
+
+腾讯邮箱发送邮件，需要授权码
+地址 qq 授权码
+https://service.mail.qq.com/cgi-bin/help?subtype=1&&id=28&&no=1001256
+
+真实项目中 smtp server 和用户名以及密码，各个公司都有专属的账号，不要使用自己邮箱的用户名和密码进行邮件发送
+
+
+写代码的时候，特别是从配置文件读数据时，主要一定要对读的数据进行解析工作，确保架构的健壮性
+
+最后在commonlib里添加一个方法，来调用发送邮件模块的接口
+public static void sendMail(String users[],String attachmentpath){
+		
+		MailEntry me=new MailEntry();
+		me.sendmail(users, attachmentpath);
+		
+	}
+
+这样做的好处，是架构的使用者仅需关注commonlib里面的接口即可，无需具体了解各个附加模块的内部实现逻辑
+
+
+
+//HtmlFileGlobal.createLog("d:\\myReport4.html");
+         junit.textui.TestRunner.run(TestSuite1.suite()); //只有这一句话是添加用例，执行用例的
+        // HtmlFileGlobal.closeLog();
+         String users[]={"67674297@qq.com"};
+		 CommonLib.sendMail(users, "report.html");
+
+
+WebDriverLibStatic 可以对父类的方法进行 补充和 扩展，增加了架构的完善型
+通过static的形式
+非static形式的调用  下节课再说
+
+surefire 复杂的配置，完全在pom中进行，至于其执行，与运行其他maven 代码一样，就是maven install
+
+surefire 它的用途就是 在maven运行时，辅助测试，提供一些必要的测试功能。其实，我们引入了架构设计以后，完全可以在测试框架中
+解决这些问题，而不需要surefire
+
+测试的成功与否的打包，是在单元测试阶段，而我们做回归测试的前提条件是？ 包已经打好了！！！！！ 我在做回归测试！！！！！！！
+
+如果用maven run测试，需要把测试代码放到 maven工程的test目录下，否者surefire 找不到用例
+
+我们的做法，就是把自动化工程当做一个项目，运行什么用例，直接反馈类名，然后对这个类名进行调用执行
+
+
+目前的主流测试，app基本上做ui自动化测试的很少，主要是以web系统为主
+
+
+
