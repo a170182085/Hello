@@ -12,7 +12,7 @@ import org.junit.runners.MethodSorters;
 
 import com.autoframe.lib.DataStore;
 import com.autoframe.lib.WebDriverLib;
-import com.worktilecommonlib.ObjectStore;
+import com.worktileprojectlib.ObjectStore;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestCase {
@@ -47,7 +47,7 @@ public class TestCase {
 		//登陆
 		String myCase2="设置个人资料";
 		bl.setUserInfo();
-		bl.newAssertEquals(myCase2,true,bl.newIsElementPresent("xpath=//span[@class='ng-binding'][contains(text(),'"+DataStore.D_User_autograph+"')]"));	
+		bl.newVerifyEquals(myCase2,true,bl.newIsTextPresent(DataStore.D_User_autograph));	
 	}
 	@Test
 	public void test3_logout() throws Exception {

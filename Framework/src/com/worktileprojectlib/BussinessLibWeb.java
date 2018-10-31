@@ -1,4 +1,4 @@
-package com.worktilecommonlib;
+package com.worktileprojectlib;
 
 import org.openqa.selenium.By;
 
@@ -8,7 +8,7 @@ import com.autoframe.lib.DataStore;
 
 
 
-public class BussinessLib extends WebdriverLibExtension{
+public class BussinessLibWeb extends WebdriverLibExtension{
 	
 	//删除Log目录中的文件，为了满足report打包发送功能
 	
@@ -64,17 +64,7 @@ public class BussinessLib extends WebdriverLibExtension{
 		super.newClick(ObjectStore.Index_user);
 		super.newClick(ObjectStore.User_exit);
 	}
-	//设置账户个人资料
-	public void setUserInfo() {
-		super.newClick(ObjectStore.Index_user);
-		super.newClick(ObjectStore.User_accountset);
-		super.newClick(ObjectStore.Account_userinfo);
-		super.newType(ObjectStore.User_name, DataStore.D_User_name);
-		super.newType(ObjectStore.User_title, DataStore.D_User_title);
-		super.newType(ObjectStore.User_department, DataStore.D_User_department);
-		super.newType(ObjectStore.User_autograph, DataStore.D_User_autograph);
-		super.newClick(ObjectStore.User_save);
-	}
+
 	public void createTask(String p_taskname,String p_assignto){
 		super.newClick("");
 		super.newType("", "");

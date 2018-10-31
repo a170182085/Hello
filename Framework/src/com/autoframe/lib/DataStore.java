@@ -1,5 +1,6 @@
 package com.autoframe.lib;
 
+import java.io.File;
 
 //与外部文件的一个接口
 public class DataStore {	
@@ -22,4 +23,7 @@ public class DataStore {
 	public static String D_User_title=CommonLib.readINIFile("./config.ini", "userInfo", "title");
 	public static String D_User_department=CommonLib.readINIFile("./config.ini", "userInfo", "department");
 	public static String D_User_autograph=CommonLib.readINIFile("./config.ini", "userInfo", "autograph");
+	public static String D_LogPath="./Log/loggingResults";
+	public static String D_ScreenShotPath=System.getProperty("user.dir")+File.separator+"Log"+File.separator+"loggingResults"+File.separator+"screenshots";
+	public static String D_DebugLogger="DebugLogger";
 }

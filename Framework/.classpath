@@ -9,6 +9,8 @@
 	<classpathentry kind="lib" path="lib/java-client-3.2.0.jar"/>
 	<classpathentry kind="lib" path="lib/selenium-server-standalone-2.53.1.jar"/>
 	<classpathentry kind="lib" path="lib/Logutf.jar"/>
+	<classpathentry kind="lib" path="lib/javax.mail-1.5.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-email-1.4.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

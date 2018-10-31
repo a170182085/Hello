@@ -1,0 +1,24 @@
+十月 31, 2018 11:24:32 下午 com.debug.log.DebugLogFile type
+信息: 初始化  -------------- 成功！
+十月 31, 2018 11:24:36 下午 com.debug.log.DebugLogFile type
+信息: 写文字： 13770949616 到  name=login_name -------------- 成功！
+十月 31, 2018 11:24:37 下午 com.debug.log.DebugLogFile type
+信息: 写文字： 902332 到  name=login_password -------------- 成功！
+十月 31, 2018 11:25:41 下午 com.debug.log.DebugLogFile type
+信息:  校验 newAssertEquals通过
+十月 31, 2018 11:25:46 下午 com.debug.log.DebugLogFile type
+信息: 写文字： 张蕾 到  name=display_name -------------- 成功！
+十月 31, 2018 11:25:47 下午 com.debug.log.DebugLogFile type
+信息: 写文字： 自动化测试 到  name=user_title -------------- 成功！
+十月 31, 2018 11:25:48 下午 com.debug.log.DebugLogFile type
+信息: 写文字： 创新项目部 到  name=user_department -------------- 成功！
+十月 31, 2018 11:25:49 下午 com.debug.log.DebugLogFile type
+信息: 写文字： 我是一只小小鸟 到  xpath=//textarea[@placeholder='个性签名'] -------------- 成功！
+十月 31, 2018 11:25:51 下午 com.debug.log.DebugLogFile type
+信息:  校验 newVerifyEquals通过
+十月 31, 2018 11:25:54 下午 com.debug.log.DebugLogFile type
+信息:  校验 newAssertEquals通过
+十月 31, 2018 11:25:54 下午 com.debug.log.DebugLogFile type
+信息: newTeardown
+十月 31, 2018 11:26:18 下午 com.debug.log.DebugLogFile type
+信息: 发送邮件成功!
