@@ -37,7 +37,7 @@ import com.report.html.HtmlFileGlobal;
  * newIsTextPresent判断是否存在包含传参的文字信息
  */
 public class WebDriverLib {
-	public static Logger logger = Logger.getLogger(DataStore.D_DebugLogger);
+//	public static Logger logger = Logger.getLogger(DataStore.D_DebugLogger);
 	public static WebDriver driver=null;
 	ReportEntry re=new ReportEntry();
 	private FileHandler fileHandler=null;
@@ -259,13 +259,12 @@ public class WebDriverLib {
 
 			try {
 				((JavascriptExecutor) driver).executeScript(p_script);
-				logger.info("执行jS代码：" + p_script + TextStore.T_Pass);
+//				logger.info("执行jS代码：" + p_script + TextStore.T_Pass);
+				DebugLogFile.type("执行jS代码：" + p_script + TextStore.T_Pass);
 
 			} catch (Exception e) {
-				logger.severe(TextStore.T_Exception
-						+ "newRunScript(String p_script)" + TextStore.T_DetailInfo
-						+ e.toString());
-
+//				logger.severe(TextStore.T_Exception	+ "newRunScript(String p_script)" + TextStore.T_DetailInfo+ e.toString());
+				DebugLogFile.type(TextStore.T_Exception	+ "newRunScript(String p_script)" + TextStore.T_DetailInfo+ e.toString());
 			}
 	   }
 			

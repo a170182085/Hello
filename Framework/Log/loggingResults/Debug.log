@@ -22,3 +22,49 @@
 信息: newTeardown
 十月 31, 2018 11:26:18 下午 com.debug.log.DebugLogFile type
 信息: 发送邮件成功!
+十一月 02, 2018 10:43:28 下午 com.debug.log.DebugLogFile type
+信息: 点击对象：name=登录 -------------- 成功！
+十一月 02, 2018 10:43:36 下午 com.debug.log.DebugLogFile type
+信息: 写文字： 13770949616 到  id=et_username -------------- 成功！
+十一月 02, 2018 10:43:43 下午 com.debug.log.DebugLogFile type
+信息: 写文字： 902332 到  id=et_password -------------- 成功！
+十一月 02, 2018 10:43:44 下午 com.debug.log.DebugLogFile type
+信息: 点击对象：id=btn_login -------------- 成功！
+十一月 02, 2018 10:44:45 下午 com.debug.log.DebugLogFile type
+信息:  校验 newAssertEquals通过
+十一月 02, 2018 10:45:45 下午 com.debug.log.DebugLogFile type
+信息:  异常： newClick(String p_id)----详细信息:
+org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 60.34 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: '张蕾', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_162'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{appPackage=com.worktile, networkConnectionEnabled=true, noReset=true, warnings={}, databaseEnabled=false, deviceName=192.168.175.101:5555, platform=LINUX, appActivity=.ui.external.WelcomeActivity, desired={appPackage=com.worktile, appActivity=.ui.external.WelcomeActivity, noReset=true, unicodeKeyboard=true, platformName=Android, deviceName=192.168.175.101:5555, resetKeyboard=true}, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, unicodeKeyboard=true, platformName=Android, resetKeyboard=true}]
+Session ID: 5214ad8a-daaf-47c3-b83e-48debef51aaf
+*** Element info: {Using=class name, value=android.widget.ImageButton}
+十一月 02, 2018 10:45:46 下午 com.debug.log.DebugLogFile type
+信息: 点击对象：id=actionbar_more -------------- 成功！
+十一月 02, 2018 10:45:47 下午 com.debug.log.DebugLogFile type
+信息: 点击对象：name=设置 -------------- 成功！
+十一月 02, 2018 10:51:53 下午 com.debug.log.DebugLogFile type
+信息: 点击对象：name=朕先歇会 -------------- 成功！
+十一月 02, 2018 10:51:54 下午 com.debug.log.DebugLogFile type
+信息:  校验 newAssertEquals通过
+十一月 02, 2018 10:51:54 下午 com.debug.log.DebugLogFile type
+信息:  异常： newClick(String p_id)----详细信息:
+org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 73 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: '张蕾', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_162'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{appPackage=com.worktile, networkConnectionEnabled=true, noReset=true, warnings={}, databaseEnabled=false, deviceName=192.168.175.101:5555, platform=LINUX, appActivity=.ui.external.WelcomeActivity, desired={appPackage=com.worktile, appActivity=.ui.external.WelcomeActivity, noReset=true, unicodeKeyboard=true, platformName=Android, deviceName=192.168.175.101:5555, resetKeyboard=true}, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, unicodeKeyboard=true, platformName=Android, resetKeyboard=true}]
+Session ID: bb865c50-5835-4535-b046-cbe97b04df45
+*** Element info: {Using=class name, value=android.widget.ImageButton}
+十一月 02, 2018 10:51:54 下午 com.debug.log.DebugLogFile type
+信息: 点击对象：id=actionbar_more -------------- 成功！
+十一月 02, 2018 10:51:55 下午 com.debug.log.DebugLogFile type
+信息: 点击对象：name=设置 -------------- 成功！
+十一月 02, 2018 10:52:02 下午 com.debug.log.DebugLogFile type
+信息: 点击对象：name=退出登录 -------------- 成功！

@@ -1,7 +1,7 @@
 package com.worktile.testcase.mobile;
 
-import com.autoframe.lib.AppiumLibAndroid;
+import com.worktileprojectlib.BussinessLibAndroid;
 
-public class MBussinessLib extends AppiumLibAndroid {
+public class MBussinessLib extends BussinessLibAndroid {
 
 }

@@ -26,4 +26,12 @@ public class DataStore {
 	public static String D_LogPath="./Log/loggingResults";
 	public static String D_ScreenShotPath=System.getProperty("user.dir")+File.separator+"Log"+File.separator+"loggingResults"+File.separator+"screenshots";
 	public static String D_DebugLogger="DebugLogger";
+	//app配置
+	public static String D_Adroid_platformName = CommonLib.readINIFile("./config.ini", "Android", "platformName");
+	public static String D_Adroid_deviceName = CommonLib.readINIFile("./config.ini", "Android", "deviceName");
+	public static String D_Adroid_noReset = CommonLib.readINIFile("./config.ini", "Android", "noReset");
+	public static String D_Adroid_appPackage = CommonLib.readINIFile("./config.ini", "Android", "appPackage");
+	public static String D_Adroid_appActivity = CommonLib.readINIFile("./config.ini", "Android", "appActivity");
+	public static String D_Adroid_chinainput = CommonLib.readINIFile("./config.ini", "Android", "chinainput");
+	public static String D_Adroid_hubURL = CommonLib.readINIFile("./config.ini", "Android", "hubURL");
 }

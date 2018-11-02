@@ -36,6 +36,8 @@ public class ObjectStore {
 	public static final String User_exit = "link=退出登录";
 	//账户设置
 	public static final String User_accountset = "link=账号资料设置";
+	
+	
 
 	
 
